@@ -1,0 +1,20 @@
+{
+  "name": "ai-nightmares-latest-threejs-fork-vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "postprocessing": "^6.23.3",
+    "three": "^0.135.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
