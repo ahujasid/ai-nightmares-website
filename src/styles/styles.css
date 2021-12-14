@@ -1,6 +1,6 @@
 body {
     /* overflow: hidden; */
-    background-color: black;
+    background-color: #080808;
     margin: 0;
     color: white;
     font-size: 100%;
@@ -14,9 +14,12 @@ body {
   
   canvas{
     z-index: -99;
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
   } 
 
 
@@ -31,9 +34,10 @@ body {
   }
 
   h3{
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: Infini, serif;
     text-align: center;
+    margin-bottom: 4rem;
   }
 
   button{
@@ -46,6 +50,28 @@ body {
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
+    transition: linear 300ms;
+    z-index: 9999;
+  }
+
+  button:hover{
+    background-color: #FF1010;
+    border: 2px solid transparent;
+  }
+
+  button:focus {outline:0;}
+
+  .divider{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 8rem;
+  }
+
+  .divider img{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
   .medium{
@@ -62,7 +88,7 @@ body {
     height: auto;
     width: 100%;
     padding: 2rem;
-    z-index: 9999;
+
   }
 
   .first-fold-container{
@@ -73,7 +99,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    /* z-index: -1; */
   }
 
   .first-fold-wrapper{
@@ -88,3 +114,22 @@ body {
     width: 100%;
   }
 
+.box{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+  margin-bottom: 8rem;
+}
+
+.description{
+  margin-top: 2rem;
+  font-family: MedievalSharp;
+  font-size: 2rem;
+}
+
+.faq-container{
+  width: 40%;
+  margin: 0 auto;
+
+}

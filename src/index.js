@@ -24,9 +24,11 @@ let renderer = new THREE.WebGLRenderer({
   powerPreference: "high-performance",
   antialias: false,
   stencil: false,
-  depth: false
+  depth: false,
+  alpha: true
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000,0);
 document.body.appendChild(renderer.domElement);
 window.addEventListener("resize", onResize, false);
 window.addEventListener("mousemove", onMouseMove);
@@ -58,6 +60,9 @@ composer.addPass(new EffectPass(camera, gre));
 
 camera.rotateZ(1.5);
 
+function mapRange(number, inMin, inMax, outMin, outMax) {
+  return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}
 
 let clock = new THREE.Clock();
 
@@ -78,7 +83,6 @@ function onResize() {
 }
 
 function onMouseMove(event) {
-  // light.position.x = event.clientX*0.1;
-  // light.position.y = event.clientY*0.1;
-  // console.log(event.clientX);
+  // light.position.y = mapRange(event.clientX,0,window.innerWidth,5,-5);
+  // light.position.x = mapRange(event.clientY,0,window.innerHeight,5,-5);
 }
