@@ -5,6 +5,7 @@ body {
     color: white;
     font-size: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   :root{
@@ -68,11 +69,18 @@ body {
     margin-bottom: 8rem;
   }
 
-  .divider img{
+  img{
     width: 100%;
     height: auto;
     overflow: hidden;
   }
+
+  .artwork{
+    width: 100%;
+    height: auto;
+  }
+
+  
 
   .medium{
     height: 4rem;
@@ -88,6 +96,10 @@ body {
     height: auto;
     width: 100%;
     padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
 
   }
 
@@ -99,7 +111,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    /* z-index: -1; */
   }
 
   .first-fold-wrapper{

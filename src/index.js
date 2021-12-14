@@ -68,10 +68,10 @@ let clock = new THREE.Clock();
 
 renderer.setAnimationLoop(() => {
   //renderer.render(scene, camera);
-  let t = clock.getElapsedTime();
-  light.userData.time.value = t;
-  light.position.x = Math.cos(t) * 4;
-  light.position.y = Math.sin(t * 0.6) * 4;
+  // let t = clock.getElapsedTime();
+  // light.userData.time.value = t;
+  // light.position.x = Math.cos(t) * 4;
+  // light.position.y = Math.sin(t * 0.6) * 4;
 
   composer.render();
 });
@@ -83,6 +83,6 @@ function onResize() {
 }
 
 function onMouseMove(event) {
-  // light.position.y = mapRange(event.clientX,0,window.innerWidth,5,-5);
-  // light.position.x = mapRange(event.clientY,0,window.innerHeight,5,-5);
+  light.position.y = mapRange(event.clientX,0,window.innerWidth,10,-10);
+  light.position.x = mapRange(event.clientY,0,window.innerHeight,10,-10);
 }
