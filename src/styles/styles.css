@@ -1,0 +1,38 @@
+body {
+    /* overflow: hidden; */
+    background-color: black;
+    margin: 0;
+    color: white;
+    font-size: 100%;
+  }
+
+  
+  canvas{
+    z-index: -99;
+    position: absolute;
+    top: 0;
+    left: 0;
+  } 
+
+  .first-fold-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .first-fold-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h1{
+    font-size: 7.5rem; /*120px*/
+    font-family: Infini, serif;
+  }
+
+  h2{
+    font-size: 3.5rem; /*56px*/
+  }

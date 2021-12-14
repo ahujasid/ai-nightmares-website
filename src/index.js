@@ -1,4 +1,4 @@
-import "./styles.css";
+
 
 import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -29,6 +29,7 @@ let renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 window.addEventListener("resize", onResize, false);
+window.addEventListener("mousemove", onMouseMove);
 
 // new OrbitControls(camera, renderer.domElement);
 
@@ -42,6 +43,7 @@ scene.add(figure);
 
 let composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
+
 let gre = new GodRaysEffect(camera, light, {
   height: 480,
   kernelSize: 2,
@@ -73,4 +75,10 @@ function onResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function onMouseMove(event) {
+  // light.position.x = event.clientX*0.1;
+  // light.position.y = event.clientY*0.1;
+  // console.log(event.clientX);
 }
