@@ -4,6 +4,11 @@ body {
     margin: 0;
     color: white;
     font-size: 100%;
+    box-sizing: border-box;
+  }
+
+  :root{
+    --medium-text: 1.125rem; /*18px*/
   }
 
   
@@ -14,19 +19,6 @@ body {
     left: 0;
   } 
 
-  .first-fold-container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .first-fold-wrapper{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
 
   h1{
     font-size: 7.5rem; /*120px*/
@@ -35,4 +27,64 @@ body {
 
   h2{
     font-size: 3.5rem; /*56px*/
+    font-family: Bahiana, sans-serif;
   }
+
+  h3{
+    font-size: 3rem;
+    font-family: Infini, serif;
+    text-align: center;
+  }
+
+  button{
+    background-color: transparent;
+    border: 2px solid #FF1010;
+    color: white;
+    text-align: center;
+    font-family: Infini, serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .medium{
+    height: 4rem;
+    padding: 0 1rem;
+    max-width: 20rem;
+    line-height: calc(4rem - 4px);
+    font-size: var(--medium-text);
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+
+  .header{
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+    z-index: 9999;
+  }
+
+  .first-fold-container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: -8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+
+  .first-fold-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .how-it-works{
+    margin: 0 auto;
+    width: 100%;
+  }
+
