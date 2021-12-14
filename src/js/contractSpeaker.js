@@ -7,7 +7,7 @@
  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   
 */
 
-Web3 = require('Web3');
+Web3 = require('web3');
 var account;
 var contract;
 
