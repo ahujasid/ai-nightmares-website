@@ -24,12 +24,10 @@ camera.position.set(1, 0, 10);
 let renderer = new THREE.WebGLRenderer({
   powerPreference: "high-performance",
   antialias: true,
-  stencil: false,
-  depth: false,
-  alpha: false
+  // alpha: false
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x080808);
+renderer.setClearColor(0x121212,1);
 document.body.appendChild(renderer.domElement);
 window.addEventListener("resize", onResize, false);
 window.addEventListener("mousemove", onMouseMove);
@@ -64,6 +62,7 @@ let noise = new NoiseEffect({
 
 composer.addPass(new EffectPass(camera, gre));
 composer.addPass(new EffectPass(camera,noise));
+console.log(renderer);
 
 camera.rotateZ(1.5);
 

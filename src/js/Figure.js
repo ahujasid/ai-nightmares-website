@@ -47,7 +47,7 @@ class Figure extends Mesh {
     );
     shape.holes.push(new Path(basePts.reverse()));
     let g = new ShapeGeometry(shape);
-    let m = new MeshBasicMaterial({ color: 0x080808 });
+    let m = new MeshBasicMaterial({ color: 0x121212 });
     super(g, m);
   }
 }
