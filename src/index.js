@@ -8,7 +8,8 @@ import {
   EffectComposer,
   EffectPass,
   GodRaysEffect,
-  RenderPass
+  RenderPass,
+  NoiseEffect
 } from "postprocessing";
 
 let scene = new THREE.Scene();
@@ -22,13 +23,13 @@ camera.position.set(1, 0, 10);
 
 let renderer = new THREE.WebGLRenderer({
   powerPreference: "high-performance",
-  antialias: false,
+  antialias: true,
   stencil: false,
   depth: false,
-  alpha: true
+  alpha: false
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000,0);
+renderer.setClearColor(0x080808);
 document.body.appendChild(renderer.domElement);
 window.addEventListener("resize", onResize, false);
 window.addEventListener("mousemove", onMouseMove);
@@ -56,7 +57,13 @@ let gre = new GodRaysEffect(camera, light, {
   samples: 20,
   clampMax: 0.95
 });
+
+let noise = new NoiseEffect({
+  premultiply: true,
+});
+
 composer.addPass(new EffectPass(camera, gre));
+composer.addPass(new EffectPass(camera,noise));
 
 camera.rotateZ(1.5);
 
@@ -68,10 +75,10 @@ let clock = new THREE.Clock();
 
 renderer.setAnimationLoop(() => {
   //renderer.render(scene, camera);
-  // let t = clock.getElapsedTime();
-  // light.userData.time.value = t;
-  // light.position.x = Math.cos(t) * 4;
-  // light.position.y = Math.sin(t * 0.6) * 4;
+  let t = clock.getElapsedTime();
+  light.userData.time.value = t;
+  // light.position.x += Math.cos(t) * 0.01;
+  // light.position.y += Math.sin(t * 0.6) * 0.01;
 
   composer.render();
 });
