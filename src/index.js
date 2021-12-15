@@ -76,8 +76,8 @@ renderer.setAnimationLoop(() => {
   //renderer.render(scene, camera);
   let t = clock.getElapsedTime();
   light.userData.time.value = t;
-  // light.position.x += Math.cos(t) * 0.01;
-  // light.position.y += Math.sin(t * 0.6) * 0.01;
+  // camera.position.x += Math.cos(t) * 0.01;
+  // camera.position.y += Math.sin(t * 0.6) * 0.01;
 
   composer.render();
 });
@@ -91,4 +91,6 @@ function onResize() {
 function onMouseMove(event) {
   light.position.y = mapRange(event.clientX,0,window.innerWidth,10,-10);
   light.position.x = mapRange(event.clientY,0,window.innerHeight,10,-10);
+  camera.position.y = mapRange(event.clientX,0,window.innerWidth,-0.5,0.5);
+  camera.position.x = mapRange(event.clientY,0,window.innerHeight,0.5,1.5);
 }
